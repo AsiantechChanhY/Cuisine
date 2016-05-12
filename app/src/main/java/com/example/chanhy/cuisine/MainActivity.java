@@ -84,17 +84,17 @@ public class MainActivity extends ActionBarActivity implements ViewAnimator.View
 
     }
 
-    private void setActionBar(){
+    private void setActionBar() {
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         drawerToggle = new ActionBarDrawerToggle(
                 this,
                 drawerLayout,
-                toolbar,
+//                toolbar,
                 R.string.drawer_open,
                 R.string.drawer_close) {
 
@@ -193,4 +193,6 @@ public class MainActivity extends ActionBarActivity implements ViewAnimator.View
     public void addViewToContainer(View view) {
         linearLayout.addView(view);
     }
+
+
 }
