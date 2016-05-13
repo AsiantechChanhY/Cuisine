@@ -1,6 +1,5 @@
 package com.example.chanhy.cuisine;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -25,8 +24,8 @@ public class LoginActivity extends ActionBarActivity {
         ImageView tech = (ImageView) findViewById(R.id.imgTech);
         ImageView asian = (ImageView) findViewById(R.id.imgAsian);
         TextView welcome = (TextView) findViewById(R.id.tvWelcome);
-        Button forgot = (Button) findViewById(R.id.btnForgot);
-        Button signup = (Button) findViewById(R.id.btnSignup);
+        Button forgot = (Button) findViewById(R.id.btninForgot);
+        Button signup = (Button) findViewById(R.id.btninSignup);
         Button signin = (Button) findViewById(R.id.btnSignIn);
         LinearLayout logo = (LinearLayout) findViewById(R.id.lnImgLogo);
         LinearLayout llemail = (LinearLayout) findViewById(R.id.llEmail);
@@ -53,6 +52,14 @@ public class LoginActivity extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intent1 = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent1);
+            }
+        });
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(intent2);
             }
         });
     }

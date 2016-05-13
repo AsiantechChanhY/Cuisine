@@ -11,4 +11,5 @@
     <string name="button.text.signin">Sign In</string>
     <string name="button.text.forgot">Forgot Password</string>
     <string name="button.text.signup">Sign Up</string>
+    <string name="edittext.hint.usernamesignup">Username</string>
 </resources>

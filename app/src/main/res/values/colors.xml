@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#A9C13B</color>
+    <color name="colorPrimary">#0b1d8c</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
@@ -8,5 +8,5 @@
     <color name="white">#ffffff</color>
     <color name="linearlayout.background.edittext">#1affffff</color>
     <color name="edittext.textcolorhint.login">#73ffffff</color>
-    <color name="button.background.signin">#ff7043</color>
+    <color name="button.background.signin">#0b1d8c</color>
 </resources>
