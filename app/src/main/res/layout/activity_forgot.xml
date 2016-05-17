@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:gravity="center"
+    android:background="@color/background.login">
+
+    <LinearLayout
+        android:id="@+id/llemailsignup"
+        style="@style/linearlayout_contains_edittext_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_email"
+            android:contentDescription="@null"/>
+
+        <EditText
+            android:id="@+id/êtmailsignup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/edittext_login"
+            android:hint="@string/edittext.hint.email"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlsignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llemailsignup"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/btnSignup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/button_sign_in"
+            android:text="@string/button.text.forgot"
+            android:visibility="visible"/>
+
+        <ProgressBar
+            android:id="@+id/progressWaiting"
+            android:layout_width="@dimen/progressbar.width.32dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

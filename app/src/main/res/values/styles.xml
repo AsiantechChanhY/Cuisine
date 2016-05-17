@@ -52,4 +52,10 @@
         <item name="android:textSize">@dimen/button.textsize.14sp</item>
     </style>
 
+    <style name="DialogTheme">
+        <item name="android:windowEnterAnimation">@anim/left_dialog</item>
+        <item name="android:windowExitAnimation">@anim/right_dialog</item>
+    </style>
+
+
 </resources>
