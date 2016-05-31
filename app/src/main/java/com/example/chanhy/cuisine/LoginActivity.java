@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import com.crashlytics.android.Crashlytics;
 import com.example.chanhy.cuisine.Activity.MainActivity;
-import com.example.chanhy.cuisine.Activity.SignupActivity;
 import io.fabric.sdk.android.Fabric;
 
 
@@ -81,11 +80,14 @@ public class LoginActivity extends ActionBarActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent1 = new Intent(getApplicationContext(), SignupActivity.class);
-                startActivity(intent1);
+                final Dialog dialogforgot = new Dialog(LoginActivity.this);
 
+                dialogforgot.getWindow();
+                dialogforgot.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialogforgot.setContentView(R.layout.activity_signup);
+                dialogforgot.getWindow().getAttributes().windowAnimations = R.style.DialogTheme;
+                dialogforgot.show();
             }
-
         });
     }
 
@@ -102,6 +104,5 @@ public class LoginActivity extends ActionBarActivity {
                 dialogforgot.show();
             }
         });
-
     }
 }

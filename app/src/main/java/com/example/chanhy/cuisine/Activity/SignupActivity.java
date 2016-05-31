@@ -26,7 +26,6 @@ public class SignupActivity extends Activity implements View.OnClickListener {
         getWindow().getAttributes().windowAnimations = R.style.DialogTheme;
         setContentView(R.layout.activity_signup);
 
-        mTvisconected  = (TextView) findViewById(R.id.tvIsConnected);
         mUsernamesignup = (EditText) findViewById(R.id.etusernamsignup);
         mPasswordsignup = (EditText) findViewById(R.id.etpasswordsignup);
         mEmailsignup = (EditText) findViewById(R.id.etmailsignup);
