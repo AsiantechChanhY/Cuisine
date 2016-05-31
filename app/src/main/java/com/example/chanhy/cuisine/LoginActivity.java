@@ -1,7 +1,6 @@
 package com.example.chanhy.cuisine;
 
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -14,31 +13,36 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.crashlytics.android.Crashlytics;
+import com.example.chanhy.cuisine.Activity.MainActivity;
+import com.example.chanhy.cuisine.Activity.SignupActivity;
+import io.fabric.sdk.android.Fabric;
+
 
 /**
  * Created by chanhy on 12/05/2016.
  */
 public class LoginActivity extends ActionBarActivity {
 
-    final Context context = this;
-    LinearLayout logo, llemail, llpassword;
-    Button signup, mBtnSignup, signin, forgot;
-    ImageView tech, asian;
-    TextView welcome;
+    LinearLayout mLogo, mLlemail, mLlpassword;
+    Button mSignup, mBtnSignup, mSignin, mForgot;
+    ImageView mTech, mAsian;
+    TextView mWelcome;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_login);
 
-        tech = (ImageView) findViewById(R.id.imgTech);
-        asian = (ImageView) findViewById(R.id.imgAsian);
-        welcome = (TextView) findViewById(R.id.tvWelcome);
-        forgot = (Button) findViewById(R.id.btninForgot);
-        signup = (Button) findViewById(R.id.btninSignup);
-        signin = (Button) findViewById(R.id.btnSignIn);
-        logo = (LinearLayout) findViewById(R.id.lnImgLogo);
-        llemail = (LinearLayout) findViewById(R.id.llEmail);
-        llpassword = (LinearLayout) findViewById(R.id.llPassword);
+        mTech = (ImageView) findViewById(R.id.imgTech);
+        mAsian = (ImageView) findViewById(R.id.imgAsian);
+        mWelcome = (TextView) findViewById(R.id.tvWelcome);
+        mForgot = (Button) findViewById(R.id.btninForgot);
+        mSignup = (Button) findViewById(R.id.btninSignup);
+        mSignin = (Button) findViewById(R.id.btnSignIn);
+        mLogo = (LinearLayout) findViewById(R.id.lnImgLogo);
+        mLlemail = (LinearLayout) findViewById(R.id.llEmail);
+        mLlpassword = (LinearLayout) findViewById(R.id.llPassword);
 
         final Animation animAsian = AnimationUtils.loadAnimation(this, R.anim.anim_asian);
         final  Animation animTech = AnimationUtils.loadAnimation(this, R.anim.anim_tech);
@@ -46,38 +50,47 @@ public class LoginActivity extends ActionBarActivity {
         final  Animation animdown = AnimationUtils.loadAnimation(this, R.anim.anim_down);
         final  Animation animlogo = AnimationUtils.loadAnimation(this, R.anim.anim_logo);
 
-        asian.startAnimation(animAsian);
-        tech.startAnimation(animTech);
-        logo.startAnimation(animlogo);
-        welcome.startAnimation(animdown);
-        llemail.startAnimation(animup);
-        llpassword.startAnimation(animup);
-        signup.startAnimation(animup);
-        signin.startAnimation(animup);
-        forgot.startAnimation(animup);
+        mAsian.startAnimation(animAsian);
+        mTech.startAnimation(animTech);
+        mLogo.startAnimation(animlogo);
+        mWelcome.startAnimation(animdown);
+        mLlemail.startAnimation(animup);
+        mLlpassword.startAnimation(animup);
+        mSignup.startAnimation(animup);
+        mSignin.startAnimation(animup);
+        mForgot.startAnimation(animup);
 
-       signin.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-               startActivity(intent);
-           }
-       });
+        signindialog();
+        signupdialog();
+        forgotdialog();
+    }
 
-        signup.setOnClickListener(new View.OnClickListener() {
+    private void signindialog() {
+        mSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final Dialog dialog = new Dialog(LoginActivity.this);
-
-                dialog.getWindow();
-                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.activity_signup);
-                dialog.getWindow().getAttributes().windowAnimations = R.style.DialogTheme;
-                dialog.show();
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
+    }
 
-        forgot.setOnClickListener(new View.OnClickListener() {
+    private void signupdialog() {
+
+        mSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent1 = new Intent(getApplicationContext(), SignupActivity.class);
+                startActivity(intent1);
+
+            }
+
+        });
+    }
+
+    private void forgotdialog() {
+        mForgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final Dialog dialogforgot = new Dialog(LoginActivity.this);
@@ -91,6 +104,4 @@ public class LoginActivity extends ActionBarActivity {
         });
 
     }
-
-
 }

@@ -36,7 +36,7 @@
         android:layout_centerHorizontal="true">
 
         <Button
-            android:id="@+id/btnSignup"
+            android:id="@+id/btnforgot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/button_sign_in"

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/icn_close"
+            android:title="Close" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/icn_1"
+            android:title="Building" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/icn_2"
+            android:title="Book" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/icn_3"
+            android:title="Paint" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/icn_3"
+            android:title="Case" />
+        <item
+            android:id="@+id/nav_send"
+            android:icon="@drawable/icn_3"
+            android:title="Shop" />
+        <item
+            android:id="@+id/nav_party"
+            android:icon="@drawable/icn_3"
+            android:title="Party" />
+        <item
+            android:id="@+id/nav_movie"
+            android:icon="@drawable/icn_3"
+            android:title="Movie" />
+    </group>
+
+
+</menu>

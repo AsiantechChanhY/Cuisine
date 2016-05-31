@@ -19,7 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Activity.MainActivity"></activity>
+
+        <activity android:name=".Activity.SignupActivity"></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="76efa79bf0cc649295566db05c21f070ff996844" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

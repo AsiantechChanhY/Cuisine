@@ -14,7 +14,8 @@
             android:id="@+id/image_content"
             android:src="@drawable/content_films"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:contentDescription="@null"/>
 
     </FrameLayout>
 </io.codetail.widget.RevealFrameLayout>
