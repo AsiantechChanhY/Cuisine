@@ -6,11 +6,12 @@
     <string name="drawer_close">Close</string>
 
     <string name="textview.text.welcome_to_euro2016">Welcome to Cuisine Da Nang</string>
-    <string name="edittext.hint.email">Email</string>
+    <string name="edittext.hint.email">Email Address</string>
     <string name="edittext.hint.password">Password</string>
-    <string name="button.text.signin">Sign In</string>
-    <string name="button.text.forgot">Forgot Password</string>
-    <string name="button.text.signup">Sign Up</string>
+    <string name="button.text.signin">Login</string>
+    <string name="button.text.forgot">Password</string>
+    <string name="button.text.signup">Register</string>
     <string name="edittext.hint.usernamesignup">Username</string>
     <string name="costomview">im custom view</string>
+    <string name="or.login.with">Or sign in with</string>
 </resources>

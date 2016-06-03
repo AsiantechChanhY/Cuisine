@@ -9,12 +9,11 @@ import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.crashlytics.android.Crashlytics;
-import com.example.chanhy.cuisine.Activity.MainActivity;
+import com.example.chanhy.cuisine.Activity.TabLayoutActivity;
 import io.fabric.sdk.android.Fabric;
 
 
@@ -25,7 +24,6 @@ public class LoginActivity extends ActionBarActivity {
 
     LinearLayout mLogo, mLlemail, mLlpassword;
     Button mSignup, mBtnSignup, mSignin, mForgot;
-    ImageView mTech, mAsian;
     TextView mWelcome;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +31,10 @@ public class LoginActivity extends ActionBarActivity {
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_login);
 
-        mTech = (ImageView) findViewById(R.id.imgTech);
-        mAsian = (ImageView) findViewById(R.id.imgAsian);
         mWelcome = (TextView) findViewById(R.id.tvWelcome);
         mForgot = (Button) findViewById(R.id.btninForgot);
         mSignup = (Button) findViewById(R.id.btninSignup);
         mSignin = (Button) findViewById(R.id.btnSignIn);
-        mLogo = (LinearLayout) findViewById(R.id.lnImgLogo);
         mLlemail = (LinearLayout) findViewById(R.id.llEmail);
         mLlpassword = (LinearLayout) findViewById(R.id.llPassword);
 
@@ -49,9 +44,6 @@ public class LoginActivity extends ActionBarActivity {
         final  Animation animdown = AnimationUtils.loadAnimation(this, R.anim.anim_down);
         final  Animation animlogo = AnimationUtils.loadAnimation(this, R.anim.anim_logo);
 
-        mAsian.startAnimation(animAsian);
-        mTech.startAnimation(animTech);
-        mLogo.startAnimation(animlogo);
         mWelcome.startAnimation(animdown);
         mLlemail.startAnimation(animup);
         mLlpassword.startAnimation(animup);
@@ -68,7 +60,7 @@ public class LoginActivity extends ActionBarActivity {
         mSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, TabLayoutActivity.class);
                 startActivity(intent);
             }
         });

@@ -11,11 +11,15 @@
     <dimen name="textview.margin_16dp">16dp</dimen>
     <dimen name="textview.textsize.20sp">20sp</dimen>
     <dimen name="linearlayout.margin.8dp">8dp</dimen>
-    <dimen name="linearlayout.margin.36dp">36dp</dimen>
+    <dimen name="linearlayout.margin.36dp">50dp</dimen>
     <dimen name="linearlayout.padding.8dp">8dp</dimen>
     <dimen name="edittext.paddingleft.4dp">4dp</dimen>
     <dimen name="edittext.textsize.16sp">16sp</dimen>
     <dimen name="button.textsize.18sp">18sp</dimen>
     <dimen name="progressbar.width.32dp">32dp</dimen>
     <dimen name="button.textsize.14sp">14sp</dimen>
+    <dimen name="or.login.with">12sp</dimen>
+    <dimen name="linearlayout.height.35dp">35dp</dimen>
+    <dimen name="linearlayout.marginTop.20dp">20dp</dimen>
+    <dimen name="linearlayout.marginTop.10dp">10dp</dimen>
 </resources>

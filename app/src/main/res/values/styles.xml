@@ -18,6 +18,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="linearlayout_contains_edittext_one">
+        <item name="android:layout_height">@dimen/linearlayout.height.35dp</item>
         <item name="android:layout_marginBottom">@dimen/linearlayout.margin.8dp</item>
         <item name="android:layout_marginLeft">@dimen/linearlayout.margin.36dp</item>
         <item name="android:layout_marginRight">@dimen/linearlayout.margin.36dp</item>
@@ -33,7 +34,8 @@
         <item name="android:background">@android:color/transparent</item>
         <item name="android:textSize">@dimen/edittext.textsize.16sp</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:textColorHint">@color/edittext.textcolorhint.login</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:typeface">monospace</item>
     </style>
 
     <style name="button_sign_in">
@@ -50,6 +52,7 @@
         <item name="android:textAllCaps" tools:targetApi="ice_cream_sandwich">false</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">@dimen/button.textsize.14sp</item>
+        <item name="android:typeface">normal</item>
     </style>
 
     <style name="DialogTheme">

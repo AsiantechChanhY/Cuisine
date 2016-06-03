@@ -4,9 +4,12 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="mauchinh">#008DD2</color>
     <color name="background.login">#5bb967</color>
     <color name="white">#ffffff</color>
     <color name="linearlayout.background.edittext">#1affffff</color>
     <color name="edittext.textcolorhint.login">#73ffffff</color>
     <color name="button.background.signin">#0b1d8c</color>
+    <color name="toolbar">#018FE5</color>
+
 </resources>
