@@ -11,5 +11,8 @@
     <color name="edittext.textcolorhint.login">#73ffffff</color>
     <color name="button.background.signin">#0b1d8c</color>
     <color name="toolbar">#018FE5</color>
+    <color name="feed_item_border">#c2c3c8</color>
+    <color name="link">#3b5998</color>
+    <color name="timestamp">#a0a3a7</color>
 
 </resources>
