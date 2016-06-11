@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.chanhy.cuisine.Model.AndroidVersion;
 import com.example.chanhy.cuisine.R;
+import com.example.chanhy.cuisine.widget.CircleImageView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -48,12 +49,13 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         private TextView tv_name,tv_datetime,tvlocation, tv_userId;
-        private ImageView img_image, img_profilePic;
+        private ImageView img_image;
+        private CircleImageView img_profilePic;
 
         public ViewHolder(View view) {
             super(view);
 
-            img_profilePic = (ImageView)view.findViewById(R.id.profilePic);
+            img_profilePic = (CircleImageView)view.findViewById(R.id.profilePic);
             tv_name = (TextView)view.findViewById(R.id.productname);
             tv_datetime = (TextView)view.findViewById(R.id.price);
             tv_userId = (TextView)view.findViewById(R.id.storename);

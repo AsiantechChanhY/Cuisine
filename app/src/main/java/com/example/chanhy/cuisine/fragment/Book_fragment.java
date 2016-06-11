@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.chanhy.cuisine.Interface.ApiService;
+import com.example.chanhy.cuisine.Interface.Constant;
 import com.example.chanhy.cuisine.Model.AndroidVersion;
 import com.example.chanhy.cuisine.R;
 import com.example.chanhy.cuisine.Rest.JSONResponse;
@@ -19,6 +20,8 @@ import com.example.chanhy.cuisine.adapter.DataAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import android.os.Handler;
+import java.util.logging.LogRecord;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,8 +33,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by chanhy on 31/05/2016.
  */
 public class Book_fragment extends Fragment  {
-
-    public static final String BASE_URL = "http://192.168.1.117:3000";
 
     private RecyclerView recyclerView;
     private ArrayList<AndroidVersion> data;
@@ -71,7 +72,8 @@ public class Book_fragment extends Fragment  {
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                loadJSON();
+               loadJSON();
+                mSwipeRefreshLayout.setRefreshing(false);
             }
         });
     }
@@ -79,7 +81,7 @@ public class Book_fragment extends Fragment  {
     private void loadJSON(){
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(Constant.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -98,11 +100,12 @@ public class Book_fragment extends Fragment  {
 
                 recyclerView.setAdapter(adapter);
 
+//                mSwipeRefreshLayout.setRefreshing(false);
+
             }
 
             @Override
             public void onFailure(Call<JSONResponse> call, Throwable t) {
-                Log.d("Error",t.getMessage());
             }
         });
     }

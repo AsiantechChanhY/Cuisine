@@ -22,12 +22,11 @@
             android:paddingLeft="@dimen/feed_item_padding_left_right"
             android:paddingRight="@dimen/feed_item_padding_left_right" >
 
-            <ImageView
+            <com.example.chanhy.cuisine.widget.CircleImageView
                 android:id="@+id/profilePic"
                 android:layout_width="@dimen/feed_item_profile_pic"
-                android:layout_height="@dimen/feed_item_profile_pic"
-                android:scaleType="fitCenter" >
-            </ImageView>
+                android:layout_height="@dimen/feed_item_profile_pic">
+            </com.example.chanhy.cuisine.widget.CircleImageView>
 
             <LinearLayout
                 android:layout_width="fill_parent"
