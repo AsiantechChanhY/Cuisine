@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +19,6 @@ import com.example.chanhy.cuisine.adapter.DataAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import android.os.Handler;
-import java.util.logging.LogRecord;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -50,14 +47,13 @@ public class Book_fragment extends Fragment  {
         View view = inflater.inflate(R.layout.activity_book, container, false);
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe);
-
         recyclerView = (RecyclerView) view.findViewById(R.id.card_recycler_view);
+
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
         configViews();
-
         loadJSON();
 
         return view;
@@ -88,7 +84,6 @@ public class Book_fragment extends Fragment  {
         ApiService request = retrofit.create(ApiService.class);
 
         Call<JSONResponse> call = request.getJSON();
-
         call.enqueue(new Callback<JSONResponse>() {
 
             @Override
@@ -96,12 +91,9 @@ public class Book_fragment extends Fragment  {
 
                 JSONResponse jsonResponse = response.body();
                 data = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
+
                 adapter = new DataAdapter(data);
-
                 recyclerView.setAdapter(adapter);
-
-//                mSwipeRefreshLayout.setRefreshing(false);
-
             }
 
             @Override

@@ -14,4 +14,7 @@
     <string name="edittext.hint.usernamesignup">Username</string>
     <string name="costomview">im custom view</string>
     <string name="or.login.with">Or sign in with</string>
+    <string name="tv.like">Like</string>
+    <string name="tv.comment">Comment</string>
+    <string name="tv.share">Share</string>
 </resources>

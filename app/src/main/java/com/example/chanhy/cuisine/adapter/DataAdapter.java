@@ -33,12 +33,13 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(DataAdapter.ViewHolder viewHolder, int i) {
 
-        Picasso.with(viewHolder.itemView.getContext()).load(data.get(i).getImage()).into(viewHolder.img_profilePic);
-        viewHolder.tv_name.setText(data.get(i).getName());
-        viewHolder.tv_datetime.setText(data.get(i).getDatetime());
-        viewHolder.tvlocation.setText(data.get(i).getLocation());
-        viewHolder.tv_userId.setText(data.get(i).getUserId());
-        Picasso.with(viewHolder.itemView.getContext()).load(data.get(i).getImage()).into(viewHolder.img_image);
+        Picasso.with(viewHolder.itemView.getContext()).load(data.get(i).getImage()).into(viewHolder.mProfilePic);
+        viewHolder.mName.setText(data.get(i).getName());
+//        viewHolder.mDatetime
+//                .setText(data.get(i).getDatetime());
+        viewHolder.mLocation.setText(data.get(i).getLocation());
+//        viewHolder.mUserId.setText(data.get(i).getUserId());
+        Picasso.with(viewHolder.itemView.getContext()).load(data.get(i).getImage()).into(viewHolder.mImageBook);
     }
 
     @Override
@@ -48,19 +49,19 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView tv_name,tv_datetime,tvlocation, tv_userId;
-        private ImageView img_image;
-        private CircleImageView img_profilePic;
+        private TextView mName,mDatetime,mLocation, mUserId;
+        private ImageView mImageBook;
+        private CircleImageView mProfilePic;
 
         public ViewHolder(View view) {
             super(view);
 
-            img_profilePic = (CircleImageView)view.findViewById(R.id.profilePic);
-            tv_name = (TextView)view.findViewById(R.id.productname);
-            tv_datetime = (TextView)view.findViewById(R.id.price);
-            tv_userId = (TextView)view.findViewById(R.id.storename);
-            tvlocation = (TextView)view.findViewById(R.id.base_price);
-            img_image = (ImageView) view.findViewById(R.id.imagenew);
+            mProfilePic = (CircleImageView)view.findViewById(R.id.imgprofilePic);
+            mName = (TextView)view.findViewById(R.id.tvproductname);
+//            mDatetime = (TextView)view.findViewById(R.id.tvdatetime);
+//            mUserId = (TextView)view.findViewById(R.id.tvuserid);
+            mLocation = (TextView)view.findViewById(R.id.tvlocation);
+            mImageBook = (ImageView) view.findViewById(R.id.imgimagenew);
 
         }
     }
