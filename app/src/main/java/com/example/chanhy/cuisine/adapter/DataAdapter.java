@@ -35,10 +35,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
         Picasso.with(viewHolder.itemView.getContext()).load(data.get(i).getImage()).into(viewHolder.mProfilePic);
         viewHolder.mName.setText(data.get(i).getName());
-//        viewHolder.mDatetime
-//                .setText(data.get(i).getDatetime());
         viewHolder.mLocation.setText(data.get(i).getLocation());
-//        viewHolder.mUserId.setText(data.get(i).getUserId());
         Picasso.with(viewHolder.itemView.getContext()).load(data.get(i).getImage()).into(viewHolder.mImageBook);
     }
 
@@ -49,7 +46,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView mName,mDatetime,mLocation, mUserId;
+        private TextView mName,mLocation;
         private ImageView mImageBook;
         private CircleImageView mProfilePic;
 
@@ -58,8 +55,6 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
             mProfilePic = (CircleImageView)view.findViewById(R.id.imgprofilePic);
             mName = (TextView)view.findViewById(R.id.tvproductname);
-//            mDatetime = (TextView)view.findViewById(R.id.tvdatetime);
-//            mUserId = (TextView)view.findViewById(R.id.tvuserid);
             mLocation = (TextView)view.findViewById(R.id.tvlocation);
             mImageBook = (ImageView) view.findViewById(R.id.imgimagenew);
 

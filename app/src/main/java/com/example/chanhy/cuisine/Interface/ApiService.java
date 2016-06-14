@@ -12,5 +12,4 @@ public interface ApiService {
 
     @GET("api/Products")
     Call<JSONResponse> getJSON();
-
 }

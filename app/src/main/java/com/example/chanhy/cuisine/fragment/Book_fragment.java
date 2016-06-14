@@ -31,9 +31,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class Book_fragment extends Fragment  {
 
-    private RecyclerView recyclerView;
+    private RecyclerView mRecyclerView;
     private ArrayList<AndroidVersion> data;
-    private DataAdapter adapter;
+    private DataAdapter mAdapter;
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
     @Override
@@ -47,11 +47,11 @@ public class Book_fragment extends Fragment  {
         View view = inflater.inflate(R.layout.activity_book, container, false);
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe);
-        recyclerView = (RecyclerView) view.findViewById(R.id.card_recycler_view);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.card_recycler_view);
 
-        recyclerView.setHasFixedSize(true);
+        mRecyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(layoutManager);
+        mRecyclerView.setLayoutManager(layoutManager);
 
         configViews();
         loadJSON();
@@ -92,8 +92,8 @@ public class Book_fragment extends Fragment  {
                 JSONResponse jsonResponse = response.body();
                 data = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
 
-                adapter = new DataAdapter(data);
-                recyclerView.setAdapter(adapter);
+                mAdapter = new DataAdapter(data);
+                mRecyclerView.setAdapter(mAdapter);
             }
 
             @Override
