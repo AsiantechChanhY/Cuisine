@@ -25,7 +25,7 @@
 
 
     <dimen name="feed_item_margin">15dp</dimen>
-    <dimen name="feed_item_padding_top_bottom">10dp</dimen>
+    <dimen name="feed_item_padding_top_bottom">20dp</dimen>
     <dimen name="feed_item_padding_left_right">15dp</dimen>
     <dimen name="feed_item_profile_pic">50dp</dimen>
     <dimen name="feed_item_profile_info_padd">10dp</dimen>
@@ -38,4 +38,16 @@
     <dimen name="slidingmenu_offset">60dp</dimen>
     <dimen name="list_padding">10dp</dimen>
     <dimen name="shadow_width">15dp</dimen>
+
+
+    <!-- dimen activity_case -->
+    <dimen name="linearlayout.margin.left.10dp">10dp</dimen>
+    <dimen name="linearlayout.margin.right.10dp">10dp</dimen>
+    <dimen name="gridview.verticalSpacing.5dp">5dp</dimen>
+
+    <!-- dimen case_item -->
+    <dimen name="imageview.layout_height.120dp">120dp</dimen>
+    <dimen name="textsize.12sp">12sp</dimen>
+    <dimen name="textsize.10sp">10sp</dimen>
+
 </resources>

@@ -60,5 +60,11 @@
         <item name="android:windowExitAnimation">@anim/right_dialog</item>
     </style>
 
+    <style name="activity_case">
+        <item name="android:paddingLeft">@dimen/linearlayout.margin.left.10dp</item>
+        <item name="android:paddingRight">@dimen/linearlayout.margin.right.10dp</item>
+        <item name="android:paddingTop">@dimen/linearlayout.margin.left.10dp</item>
+    </style>
+
 
 </resources>

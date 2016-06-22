@@ -3,7 +3,7 @@ package com.example.chanhy.cuisine.Model;
 /**
  * Created by chanhy on 23/05/2016.
  */
-public class AndroidVersion {
+public class BookItem {
 
     private String name;
     private String userId;

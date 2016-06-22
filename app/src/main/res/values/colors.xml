@@ -15,5 +15,6 @@
     <color name="link">#3b5998</color>
     <color name="timestamp">#a0a3a7</color>
     <color name="blue">#3498DB</color>
+    <color name="black">#000000</color>
 
 </resources>

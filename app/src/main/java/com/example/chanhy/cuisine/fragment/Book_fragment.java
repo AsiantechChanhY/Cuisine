@@ -10,12 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.chanhy.cuisine.Interface.ApiService;
+import com.example.chanhy.cuisine.Interface.BookApi;
 import com.example.chanhy.cuisine.Interface.Constant;
-import com.example.chanhy.cuisine.Model.AndroidVersion;
+import com.example.chanhy.cuisine.Model.BookItem;
 import com.example.chanhy.cuisine.R;
-import com.example.chanhy.cuisine.Rest.JSONResponse;
-import com.example.chanhy.cuisine.adapter.DataAdapter;
+import com.example.chanhy.cuisine.Rest.BookList;
+import com.example.chanhy.cuisine.adapter.BookAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,8 +32,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Book_fragment extends Fragment  {
 
     private RecyclerView mRecyclerView;
-    private ArrayList<AndroidVersion> data;
-    private DataAdapter mAdapter;
+    private ArrayList<BookItem> data;
+    private BookAdapter mAdapter;
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
     @Override
@@ -53,15 +53,15 @@ public class Book_fragment extends Fragment  {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(layoutManager);
 
-        configViews();
+        swipeRefresh();
         loadJSON();
 
         return view;
     }
 
-    private void configViews() {
+    private void swipeRefresh() {
 
-        mSwipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorAccent),
+        mSwipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorPrimaryDark),
                 getResources().getColor(R.color.colorPrimary),
                 getResources().getColor(R.color.colorPrimaryDark));
 
@@ -81,23 +81,24 @@ public class Book_fragment extends Fragment  {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        ApiService request = retrofit.create(ApiService.class);
+        BookApi request = retrofit.create(BookApi.class);
 
-        Call<JSONResponse> call = request.getJSON();
-        call.enqueue(new Callback<JSONResponse>() {
+        Call<BookList> call = request.getJSON();
+        call.enqueue(new Callback<BookList>() {
 
             @Override
-            public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
+            public void onResponse(Call<BookList> call, Response<BookList> response) {
 
-                JSONResponse jsonResponse = response.body();
+                BookList jsonResponse = response.body();
                 data = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
 
-                mAdapter = new DataAdapter(data);
+                mAdapter = new BookAdapter(data);
                 mRecyclerView.setAdapter(mAdapter);
+
             }
 
             @Override
-            public void onFailure(Call<JSONResponse> call, Throwable t) {
+            public void onFailure(Call<BookList> call, Throwable t) {
             }
         });
     }
