@@ -52,8 +52,8 @@ public class CaseAdapter extends ArrayAdapter<CaseItem> {
 
         CaseItem caseItem = getItem(position);
 
-        holder.mTvNameCase.setText(caseItem.getLocation());
-        holder.mTvLocation.setText(caseItem.getName());
+        holder.mTvNameCase.setText(caseItem.getName());
+        holder.mTvLocation.setText(caseItem.getLocation());
         Picasso.with(context).load(caseItem.getImage()).into(holder.mImageCase);
 
         return holder.rootView;
@@ -77,7 +77,7 @@ public class CaseAdapter extends ArrayAdapter<CaseItem> {
             TextView tvcasename = (TextView) relativeLayout.findViewById(R.id.tvcasename);
             TextView tvcaselocation = (TextView) relativeLayout.findViewById(R.id.tvcaselocation);
 
-            return new ViewHolder(relativeLayout, imageView, tvcaselocation, tvcasename);
+            return new ViewHolder(relativeLayout, imageView,tvcasename, tvcaselocation);
 
         }
 
